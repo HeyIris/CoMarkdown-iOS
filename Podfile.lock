@@ -1,0 +1,36 @@
+PODS:
+  - Alamofire (4.7.2)
+  - Google-Diff-Match-Patch (1.0.6)
+  - MarkdownView (1.3.0)
+  - SwiftyJSON (4.1.0)
+  - Toast-Swift (3.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - Google-Diff-Match-Patch (from `../google-diff-match-patch-Objective-C-master`)
+  - MarkdownView (from `../MarkdownView-master`)
+  - SwiftyJSON
+  - Toast-Swift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - SwiftyJSON
+    - Toast-Swift
+
+EXTERNAL SOURCES:
+  Google-Diff-Match-Patch:
+    :path: "../google-diff-match-patch-Objective-C-master"
+  MarkdownView:
+    :path: "../MarkdownView-master"
+
+SPEC CHECKSUMS:
+  Alamofire: 986045d86a3fdf1bc1b521eefcef114541b01343
+  Google-Diff-Match-Patch: 8305db29d97f140bf783523a9729fa0ccd4e229f
+  MarkdownView: eea82b86131782c14fa82b0ac02f3d8dceaf4bbd
+  SwiftyJSON: 57254fa011ebdbd8982b0601f7c2763b5cf13bf4
+  Toast-Swift: ab450831cf0cd465e6aee7df34a9a8985ccfb74f
+
+PODFILE CHECKSUM: ea5989bbe20dcf22ae32bb8364101bfb184617f0
+
+COCOAPODS: 1.5.2

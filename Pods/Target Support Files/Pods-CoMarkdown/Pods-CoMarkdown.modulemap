@@ -1,0 +1,6 @@
+module Pods_CoMarkdown {
+  umbrella header "Pods-CoMarkdown-umbrella.h"
+
+  export *
+  module * { export * }
+}

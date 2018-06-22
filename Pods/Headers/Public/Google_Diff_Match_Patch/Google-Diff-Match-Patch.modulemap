@@ -1,0 +1,6 @@
+module Google_Diff_Match_Patch {
+  umbrella header "Google-Diff-Match-Patch-umbrella.h"
+
+  export *
+  module * { export * }
+}
