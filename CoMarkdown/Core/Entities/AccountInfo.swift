@@ -16,7 +16,7 @@ class AccountInfo {
     var filepath: String
     
     private static let accountInfo: AccountInfo = {
-        let info = AccountInfo(username: "", email: "", token: "", file: PartakeFileItem(master: "", name: "", id:-1), filepath: "")
+        let info = AccountInfo(username: "", email: "", token: "", file: PartakeFileItem(), filepath: "")
         return info
     }()
     

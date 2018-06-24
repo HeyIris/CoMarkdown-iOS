@@ -16,6 +16,7 @@ enum PATH: String {
     case partakeFileList = "partake_files/"
     case createServer = "create_server/"
     case exitServer = "exit_coorperative_edit/"
+    case doOT = "do_OT/"
     case invite = "invite/"
     
 }

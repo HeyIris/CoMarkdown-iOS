@@ -6,7 +6,17 @@
 //  Copyright © 2018年 Tongji. All rights reserved.
 //
 
-struct OperationItem: Codable {
+import SwiftyJSON
+
+struct OperationItem {
     var name: String
     var ops: [String]
+    
+    init(data: JSON) {
+        name = data["name"].string!
+        ops = [String]()
+        for item in (data["ops"].arrayValue.map{ $0.string!}){
+            ops.append(item)
+        }
+    }
 }

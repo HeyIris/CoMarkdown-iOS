@@ -6,6 +6,15 @@
 //  Copyright © 2018年 Tongji. All rights reserved.
 //
 
-struct DoOTInfo: Codable {
+import SwiftyJSON
+
+struct DoOTInfo {
     var operation: [OperationItem]
+    
+    init(data: JSON) {
+        operation = [OperationItem]()
+        for item in data["operation"]{
+            operation.append(OperationItem(data: item.1))
+        }
+    }
 }

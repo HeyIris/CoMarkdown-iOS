@@ -13,21 +13,27 @@ protocol EditView : class {
 protocol EditPresenter {
     var router: EditViewRouter { get }
     func viewDidLoad()
+    func invite(_ invite: String)
 }
 
 class EditPresenterImplementation : EditPresenter {
     fileprivate weak var view: EditView?
     private(set) var router: EditViewRouter
-    //fileprivate var addBookUseCase: EditUseCase
+    fileprivate var inviteUseCase: InviteUseCase
     
     init(view: EditView,
-         router: EditViewRouter/*,
-         addBookUseCase: AddBookUseCase*/) {
+         router: EditViewRouter,
+         inviteUseCase: InviteUseCase) {
         self.view = view
         self.router = router
+        self.inviteUseCase = inviteUseCase
     }
     
     func viewDidLoad() {
         
+    }
+    
+    func invite(_ invite: String) {
+        inviteUseCase.Invite(username: AccountInfo.instance().username, token: AccountInfo.instance().token, filename: AccountInfo.instance().file.name, invite: invite)
     }
 }

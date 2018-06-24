@@ -6,7 +6,15 @@
 //  Copyright © 2018年 Tongji. All rights reserved.
 //
 
-struct OnlineFileInfo: Codable {
-    var list: [OperationItem]
-    var success: String
+import SwiftyJSON
+
+struct OnlineFileInfo {
+    var list: [OnlineFileItem]
+    
+    init(data: JSON) {
+        list = [OnlineFileItem]()
+        for item in data["list"]{
+            list.append(OnlineFileItem(data: item.1))
+        }
+    }
 }

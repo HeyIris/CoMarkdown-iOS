@@ -6,18 +6,24 @@
 //  Copyright © 2018年 Tongji. All rights reserved.
 //
 
+import Alamofire
+import SwiftyJSON
+
 class OTClient{
     private var revision: Int
     private var state: ClientState
-    var name: String
+    var name: String = AccountInfo.instance().file.name
     var file: String
-    private var fileID: Int = -1
+    var view: EditViewController
+    private var fileID: Int = AccountInfo.instance().file.id
     
-    init(revision:Int, fileName:String, fileContent:String) {
+    init(revision:Int, fileName:String, fileContent:String, viewController: EditViewController) {
         self.revision = revision
         state = Synchronized.instance()
         self.name = fileName
         self.file = fileContent
+        self.view = viewController
+        createServer()
     }
     
     func applyClient(operation: [String]) {
@@ -34,16 +40,37 @@ class OTClient{
         state = state.serverAck(client: self)
     }
     
-    func searchFile(){
-    }
-    
     func createServer(){
+        CreateServerUseCase().CreateServer(master: AccountInfo.instance().file.master, id: AccountInfo.instance().file.id, username: AccountInfo.instance().username, token: AccountInfo.instance().token)
     }
     
     func exitServer(){
+        ExitServerUseCase().ExitServer(master: AccountInfo.instance().file.master, id: AccountInfo.instance().file.id, username: AccountInfo.instance().username, token: AccountInfo.instance().token)
     }
     
     func sendOperation(operation: [String]) {
+        let apiClient = ApiClient.instance()
+        let operationJson = try! JSONSerialization.data(withJSONObject: operation)
+        let operationJsonStr = String(data: operationJson, encoding: String.Encoding.utf8)!
+        Alamofire.request(apiClient.endPoint + PATH.doOT.rawValue + "\(AccountInfo.instance().file.master)@\(AccountInfo.instance().file.id)/", method: .post, parameters:  ["username":AccountInfo.instance().username,"token":AccountInfo.instance().token,"operation":operationJsonStr,"revision":revision], encoding: URLEncoding.default)
+            .responseJSON{ response in
+                guard response.result.error == nil else {
+                    print(response.result.error!)
+                    return
+                }
+
+                if let value = response.result.value{
+                    let json = JSON(value)
+                    let doOTInfo = DoOTInfo(data: json)
+                    for item in doOTInfo.operation{
+                        if(item.name == AccountInfo.instance().username){
+                            self.serverAck()
+                        }else{
+                            self.applyServer(operation: item.ops)
+                        }
+                    }
+                }
+        }
     }
     
     func applyOperation(operation: [String]) {
@@ -53,19 +80,19 @@ class OTClient{
         for item in operation {
             switch(item[item.startIndex]){
             case "r":
-                length = Int(item[item.index(item.startIndex, offsetBy: 1)...item.endIndex])!
-                result += file[file.index(file.startIndex, offsetBy: pos)...file.index(file.startIndex, offsetBy: pos + length)]
+                length = Int(item[item.index(item.startIndex, offsetBy: 1)..<item.endIndex])!
+                result += file[file.index(file.startIndex, offsetBy: pos)..<file.index(file.startIndex, offsetBy: pos + length)]
                 pos += length
             case "d":
-                length = Int(item[item.index(item.startIndex, offsetBy: 1)...item.endIndex])!
+                length = Int(item[item.index(item.startIndex, offsetBy: 1)..<item.endIndex])!
                 pos += length
             case "i":
-                result += item[item.index(item.startIndex, offsetBy: 1)...item.endIndex]
+                result += item[item.index(item.startIndex, offsetBy: 1)..<item.endIndex]
             default:
                 length += 0
             }
         }
-        //EventBus.getDefault().post(ApplyChangeEvent(file, result))
+        view.textView.text = result
         file = result
     }
     
@@ -114,7 +141,7 @@ class OTClient{
             if (isRetain(a) && isRetain(b)) {
                 result.append("r" + String(minLength))
             } else if (isInsert(a) && isRetain(b)) {
-                result.append("i" + a[a.index(a.startIndex, offsetBy: 1)...a.endIndex])
+                result.append("i" + a[a.index(a.startIndex, offsetBy: 1)..<a.endIndex])
             } else if (isRetain(a) && isDelete(b)) {
                 result.append("d" + String(minLength))
             }
@@ -175,6 +202,8 @@ class OTClient{
             }
             if ((a == "") || (b == "")) {
                 result = [[String]]()
+                result.append([String]())
+                result.append([String]())
                 break
             }
             lengthA = lengthOfOperation(op: a)
@@ -211,9 +240,9 @@ class OTClient{
         var length = 0
         switch op[op.startIndex] {
         case "r":
-            length = Int(op[op.index(op.startIndex, offsetBy: 1)...op.endIndex])!
+            length = Int(op[op.index(op.startIndex, offsetBy: 1)..<op.endIndex])!
         case "d":
-            length = Int(op[op.index(op.startIndex, offsetBy: 1)...op.endIndex])!
+            length = Int(op[op.index(op.startIndex, offsetBy: 1)..<op.endIndex])!
         case "i":
             length = op.count - 1
         default:
@@ -236,7 +265,7 @@ class OTClient{
     
     private func shortenOperation(op: String, by: Int) -> String {
         if (isInsert(op)) {
-            return String(op[op.startIndex...op.index(op.startIndex, offsetBy: by)])
+            return String(op[op.startIndex..<op.index(op.startIndex, offsetBy: by)])
         } else if (isDelete(op)) {
             return "d" + String(lengthOfOperation(op: op) - by)
         } else if (isRetain(op)) {

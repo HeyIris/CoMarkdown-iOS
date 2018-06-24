@@ -301,43 +301,49 @@
                                 <rect key="frame" x="20" y="64" width="374" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FileTableViewCell" rowHeight="50" id="Uin-Up-IH0" customClass="FileTableViewCell" customModule="CoMarkdown" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FileTableViewCell" rowHeight="100" id="Uin-Up-IH0" customClass="FileTableViewCell" customModule="CoMarkdown" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uin-Up-IH0" id="MKK-kU-mg4">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="49.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="99.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="markdown-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="lUp-da-sQh">
-                                                    <rect key="frame" x="20" y="9" width="42" height="30"/>
+                                                    <rect key="frame" x="20" y="9" width="100" height="80"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="42" id="OQc-rF-9FJ"/>
+                                                        <constraint firstAttribute="height" constant="80" id="2XO-R2-4iN"/>
+                                                        <constraint firstAttribute="width" constant="100" id="TL4-M8-bm8"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FileName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XP-g4-8Fg">
-                                                    <rect key="frame" x="70" y="6" width="284" height="36"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="284" id="kaK-fp-3I8"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <rect key="frame" x="128" y="9" width="226" height="42"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ey6-RW-DmH">
+                                                    <rect key="frame" x="128" y="57" width="226" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="0XP-g4-8Fg" firstAttribute="top" secondItem="MKK-kU-mg4" secondAttribute="top" constant="6" id="F3G-0V-9Fy"/>
-                                                <constraint firstItem="0XP-g4-8Fg" firstAttribute="leading" secondItem="lUp-da-sQh" secondAttribute="trailing" constant="8" id="Hto-my-lMT"/>
-                                                <constraint firstAttribute="bottom" secondItem="0XP-g4-8Fg" secondAttribute="bottom" constant="7.6666666666666643" id="iEg-44-LDX"/>
+                                                <constraint firstItem="0XP-g4-8Fg" firstAttribute="leading" secondItem="lUp-da-sQh" secondAttribute="trailing" constant="8" id="12k-cz-eAm"/>
+                                                <constraint firstItem="lUp-da-sQh" firstAttribute="top" secondItem="MKK-kU-mg4" secondAttribute="top" constant="9" id="3j2-dL-eoF"/>
+                                                <constraint firstAttribute="trailing" secondItem="0XP-g4-8Fg" secondAttribute="trailing" constant="20" id="QTA-lp-9ui"/>
+                                                <constraint firstItem="Ey6-RW-DmH" firstAttribute="leading" secondItem="lUp-da-sQh" secondAttribute="trailing" constant="8" id="SAl-Dp-FbV"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ey6-RW-DmH" secondAttribute="trailing" constant="20" id="Yij-Xr-7Tw"/>
+                                                <constraint firstAttribute="bottom" secondItem="lUp-da-sQh" secondAttribute="bottom" constant="10.666666666666671" id="h0a-te-m7H"/>
+                                                <constraint firstItem="0XP-g4-8Fg" firstAttribute="top" secondItem="MKK-kU-mg4" secondAttribute="top" constant="9" id="l3H-rv-Zmw"/>
+                                                <constraint firstItem="Ey6-RW-DmH" firstAttribute="top" secondItem="0XP-g4-8Fg" secondAttribute="bottom" constant="6" id="vUF-1I-fBA"/>
+                                                <constraint firstItem="lUp-da-sQh" firstAttribute="leading" secondItem="MKK-kU-mg4" secondAttribute="leading" constant="20" id="ySn-b6-di8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="lUp-da-sQh" secondAttribute="bottom" constant="11" id="0ef-3D-HYU"/>
-                                            <constraint firstItem="lUp-da-sQh" firstAttribute="top" secondItem="Uin-Up-IH0" secondAttribute="top" constant="9" id="8rM-q5-FC5"/>
-                                            <constraint firstItem="lUp-da-sQh" firstAttribute="leading" secondItem="Uin-Up-IH0" secondAttribute="leading" constant="20" id="ATW-Zf-ipW"/>
-                                        </constraints>
                                         <connections>
                                             <outlet property="fileName" destination="0XP-g4-8Fg" id="Gk6-Tn-Drf"/>
+                                            <outlet property="fileOwner" destination="Ey6-RW-DmH" id="UiM-Jz-QX8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -366,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wge-sJ-TES" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1681" y="285"/>
+            <point key="canvasLocation" x="-1681.1594202898552" y="284.51086956521743"/>
         </scene>
         <!--Markdown-->
         <scene sceneID="ZFn-jz-Dft">

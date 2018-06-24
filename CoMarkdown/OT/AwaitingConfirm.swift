@@ -19,7 +19,7 @@ class AwaitingConfirm: ClientState {
     
     func applyServer(client: OTClient, operation: [String]) -> ClientState {
         let temp = client.transformOperation(outstanding: outstanding, operation: operation)
-        client.applyClient(operation: temp[1])
+        client.applyOperation(operation: temp[1])
         return AwaitingConfirm(outstanding: temp[0])
     }
     

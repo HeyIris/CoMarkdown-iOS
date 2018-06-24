@@ -30,8 +30,9 @@ class EditConfiguratorImplementation: EditConfigurator{
          addBookViewController.presenter = presenter
          */
         
+        let inviteUseCase = InviteUseCase()
         let router = EditViewRouterImplementation(editViewController: editViewController)
-        let presenter = EditPresenterImplementation(view: editViewController,router: router)
+        let presenter = EditPresenterImplementation(view: editViewController,router: router, inviteUseCase: inviteUseCase)
         editViewController.presenter = presenter
     }
 }

@@ -38,6 +38,7 @@
 		202A272920D88BA900ECA842 /* Synchronized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202A272820D88BA900ECA842 /* Synchronized.swift */; };
 		202A272B20D88D1C00ECA842 /* AwaitingConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202A272A20D88D1C00ECA842 /* AwaitingConfirm.swift */; };
 		202A272D20D88DDF00ECA842 /* AwaitingWithBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202A272C20D88DDF00ECA842 /* AwaitingWithBuffer.swift */; };
+		2049904B20DD330A00E4EE15 /* UploadFileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2049904A20DD330A00E4EE15 /* UploadFileUseCase.swift */; };
 		20620D5820D523E00023330E /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20620D5720D523E00023330E /* ViewRouter.swift */; };
 		20693B1620DB92F20041AB5B /* markdown-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 20693B1520DB92F20041AB5B /* markdown-logo.png */; };
 		2078165120CD53B6008F841D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078165020CD53B6008F841D /* AppDelegate.swift */; };
@@ -55,6 +56,13 @@
 		20B1DFCF20D3544A00BB466A /* RegisterConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1DFCE20D3544A00BB466A /* RegisterConfigurator.swift */; };
 		20B1DFD120D3547000BB466A /* RegisterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1DFD020D3547000BB466A /* RegisterContract.swift */; };
 		20B1DFD320D3547F00BB466A /* RegisterViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1DFD220D3547F00BB466A /* RegisterViewRouter.swift */; };
+		20CDCD1220DD4639002D7A12 /* DownloadFileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDCD1120DD4639002D7A12 /* DownloadFileUseCase.swift */; };
+		20CDCD1420DD4844002D7A12 /* OnlineFileListUserCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDCD1320DD4844002D7A12 /* OnlineFileListUserCase.swift */; };
+		20CDCD1620DD56CB002D7A12 /* PartakeFileListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDCD1520DD56CB002D7A12 /* PartakeFileListUseCase.swift */; };
+		20CDCD1820DE3DA1002D7A12 /* CreateServerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDCD1720DE3DA1002D7A12 /* CreateServerUseCase.swift */; };
+		20CDCD1C20DE4808002D7A12 /* InviteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDCD1B20DE4808002D7A12 /* InviteUseCase.swift */; };
+		20CDCD1E20DE48EF002D7A12 /* DoOTUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDCD1D20DE48EF002D7A12 /* DoOTUseCase.swift */; };
+		20CDCD2020DE4903002D7A12 /* ExitServerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDCD1F20DE4903002D7A12 /* ExitServerUseCase.swift */; };
 		F7F928F04615D9E0ED471076 /* libPods-CoMarkdown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCCCFD6C653D9814D9B2C44A /* libPods-CoMarkdown.a */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +98,7 @@
 		202A272820D88BA900ECA842 /* Synchronized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronized.swift; sourceTree = "<group>"; };
 		202A272A20D88D1C00ECA842 /* AwaitingConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwaitingConfirm.swift; sourceTree = "<group>"; };
 		202A272C20D88DDF00ECA842 /* AwaitingWithBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwaitingWithBuffer.swift; sourceTree = "<group>"; };
+		2049904A20DD330A00E4EE15 /* UploadFileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFileUseCase.swift; sourceTree = "<group>"; };
 		20620D5720D523E00023330E /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		20693B1520DB92F20041AB5B /* markdown-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "markdown-logo.png"; sourceTree = "<group>"; };
 		2078164D20CD53B5008F841D /* CoMarkdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoMarkdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +118,13 @@
 		20B1DFCE20D3544A00BB466A /* RegisterConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterConfigurator.swift; sourceTree = "<group>"; };
 		20B1DFD020D3547000BB466A /* RegisterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterContract.swift; sourceTree = "<group>"; };
 		20B1DFD220D3547F00BB466A /* RegisterViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewRouter.swift; sourceTree = "<group>"; };
+		20CDCD1120DD4639002D7A12 /* DownloadFileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadFileUseCase.swift; sourceTree = "<group>"; };
+		20CDCD1320DD4844002D7A12 /* OnlineFileListUserCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineFileListUserCase.swift; sourceTree = "<group>"; };
+		20CDCD1520DD56CB002D7A12 /* PartakeFileListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartakeFileListUseCase.swift; sourceTree = "<group>"; };
+		20CDCD1720DE3DA1002D7A12 /* CreateServerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateServerUseCase.swift; sourceTree = "<group>"; };
+		20CDCD1B20DE4808002D7A12 /* InviteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteUseCase.swift; sourceTree = "<group>"; };
+		20CDCD1D20DE48EF002D7A12 /* DoOTUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoOTUseCase.swift; sourceTree = "<group>"; };
+		20CDCD1F20DE4903002D7A12 /* ExitServerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitServerUseCase.swift; sourceTree = "<group>"; };
 		45D7ECE18D3E7634D191F009 /* Pods-CoMarkdown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoMarkdown.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoMarkdown/Pods-CoMarkdown.debug.xcconfig"; sourceTree = "<group>"; };
 		685FE49EDA7DBF42F410CB6D /* Pods-CoMarkdown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoMarkdown.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoMarkdown/Pods-CoMarkdown.release.xcconfig"; sourceTree = "<group>"; };
 		FCCCFD6C653D9814D9B2C44A /* libPods-CoMarkdown.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoMarkdown.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,6 +231,14 @@
 			children = (
 				209D44B920DA8BD400A689D9 /* LoginUseCase.swift */,
 				209D44BB20DA93C900A689D9 /* RegisterUseCase.swift */,
+				2049904A20DD330A00E4EE15 /* UploadFileUseCase.swift */,
+				20CDCD1120DD4639002D7A12 /* DownloadFileUseCase.swift */,
+				20CDCD1320DD4844002D7A12 /* OnlineFileListUserCase.swift */,
+				20CDCD1520DD56CB002D7A12 /* PartakeFileListUseCase.swift */,
+				20CDCD1720DE3DA1002D7A12 /* CreateServerUseCase.swift */,
+				20CDCD1F20DE4903002D7A12 /* ExitServerUseCase.swift */,
+				20CDCD1B20DE4808002D7A12 /* InviteUseCase.swift */,
+				20CDCD1D20DE48EF002D7A12 /* DoOTUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -454,20 +478,26 @@
 				2000590920D78D7000F8FC5F /* PreviewContract.swift in Sources */,
 				20B1DFD320D3547F00BB466A /* RegisterViewRouter.swift in Sources */,
 				2000590120D7896300F8FC5F /* EditContract.swift in Sources */,
+				20CDCD1420DD4844002D7A12 /* OnlineFileListUserCase.swift in Sources */,
+				20CDCD1C20DE4808002D7A12 /* InviteUseCase.swift in Sources */,
 				202A271020D881EB00ECA842 /* DoOTInfo.swift in Sources */,
+				20CDCD1220DD4639002D7A12 /* DownloadFileUseCase.swift in Sources */,
 				209D44BC20DA93C900A689D9 /* RegisterUseCase.swift in Sources */,
 				202A272920D88BA900ECA842 /* Synchronized.swift in Sources */,
 				20B1DFCB20D3540600BB466A /* LoginConfigurator.swift in Sources */,
 				20B1DFC520D3535E00BB466A /* LoginViewController.swift in Sources */,
 				209D44B820DA425E00A689D9 /* ApiClient.swift in Sources */,
+				20CDCD1820DE3DA1002D7A12 /* CreateServerUseCase.swift in Sources */,
 				2078165120CD53B6008F841D /* AppDelegate.swift in Sources */,
 				20B1DFD120D3547000BB466A /* RegisterContract.swift in Sources */,
 				202A271A20D8891100ECA842 /* OnlineFileItem.swift in Sources */,
 				20B1DFC720D353B500BB466A /* RegisterViewController.swift in Sources */,
 				20620D5820D523E00023330E /* ViewRouter.swift in Sources */,
+				20CDCD2020DE4903002D7A12 /* ExitServerUseCase.swift in Sources */,
 				202A271420D8887600ECA842 /* ExitServerInfo.swift in Sources */,
 				2000590720D78D6100F8FC5F /* PreviewViewController.swift in Sources */,
 				202A270B20D8813100ECA842 /* CreateServerInfo.swift in Sources */,
+				20CDCD1620DD56CB002D7A12 /* PartakeFileListUseCase.swift in Sources */,
 				202A271E20D8897A00ECA842 /* PartakeFileInfo.swift in Sources */,
 				2000590D20D78D9700F8FC5F /* PreviewViewRouter.swift in Sources */,
 				202A270720D87A0300ECA842 /* PartakeFileItem.swift in Sources */,
@@ -475,6 +505,7 @@
 				20B1DFCF20D3544A00BB466A /* RegisterConfigurator.swift in Sources */,
 				202A271220D8829000ECA842 /* DownloadInfo.swift in Sources */,
 				202A270D20D881A700ECA842 /* OperationItem.swift in Sources */,
+				2049904B20DD330A00E4EE15 /* UploadFileUseCase.swift in Sources */,
 				202A271620D888B100ECA842 /* InviteInfo.swift in Sources */,
 				20B1DFCD20D3543300BB466A /* LoginViewRouter.swift in Sources */,
 				2000590F20D7A55C00F8FC5F /* MarkdownEditTabBarController.swift in Sources */,
@@ -490,6 +521,7 @@
 				202A272020D889BC00ECA842 /* RegisterInfo.swift in Sources */,
 				202A272720D88B2400ECA842 /* ClientState.swift in Sources */,
 				202A272520D88A8A00ECA842 /* OTClient.swift in Sources */,
+				20CDCD1E20DE48EF002D7A12 /* DoOTUseCase.swift in Sources */,
 				202A271820D888E200ECA842 /* LoginInfo.swift in Sources */,
 				202A272220D889E400ECA842 /* UploadInfo.swift in Sources */,
 				209D44BA20DA8BD400A689D9 /* LoginUseCase.swift in Sources */,

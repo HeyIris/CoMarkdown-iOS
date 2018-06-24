@@ -5,6 +5,7 @@
 //  Created by 陈湃轩 on 2018/6/20.
 //  Copyright © 2018年 Tongji. All rights reserved.
 //
+
 import Alamofire
 import SwiftyJSON
 
@@ -12,7 +13,6 @@ class LoginUseCase {
     let apiClient = ApiClient.instance()
     
     func Login(username: String, password: String, presenter: LoginPresenter) {
-        //let url: String = apiClient.endPoint + PATH.login.rawValue
         Alamofire.request(apiClient.endPoint + PATH.login.rawValue, method: .post, parameters: ["username":username,"password":password], encoding: URLEncoding.default)
             .responseJSON{ response in
                 guard response.result.error == nil else {
